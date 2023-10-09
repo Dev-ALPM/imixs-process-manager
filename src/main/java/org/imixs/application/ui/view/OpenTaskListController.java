@@ -1,7 +1,6 @@
 package org.imixs.application.ui.view;
 
 import java.io.Serializable;
-import java.util.logging.Logger;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
@@ -18,9 +17,6 @@ import org.imixs.workflow.faces.data.ViewController;
 @ViewScoped
 public class OpenTaskListController extends ViewController implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	@SuppressWarnings("unused")
-	private static final Logger logger = Logger.getLogger(OpenTaskListController.class.getName());
 
 	@Override
 	@PostConstruct

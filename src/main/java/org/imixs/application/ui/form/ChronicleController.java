@@ -56,9 +56,8 @@ import org.imixs.workflow.faces.data.WorkflowEvent;
  * <p>
  * Each chronic entry for a workitme consists of the following data items:
  * <ul>
- * 
- * - type : date|history|file|version|
- * 
+ * <li>type : date|history|file|version|
+ * </ul>
  * 
  * <p>
  * With the method 'toggleFilter' the chronicle list can be filter to a specific
@@ -95,7 +94,7 @@ public class ChronicleController implements Serializable {
 		yearsMonths = new HashMap<>();
 		
 		/* collect history */
-		List<List<Object>> history = workflowController.getWorkitem().getItemValue("txtworkflowhistory");
+		List<List<Object>> history = (List<List<Object>>)workflowController.getWorkitem().getItemValue("txtworkflowhistory");
 		// change order
 		Collections.reverse(history);
 		// do we have real history entries?
@@ -117,8 +116,8 @@ public class ChronicleController implements Serializable {
 		}
 
 		/* collect comments */
-		List<Map<String, List<Object>>> comments = workflowController.getWorkitem().getItemValue("txtCommentLog");
-		for (Map<String, List<Object>> comment : comments) {
+		List<Map<String, List<?>>> comments = (List<Map<String, List<?>>>)workflowController.getWorkitem().getItemValue("txtCommentLog");
+		for (Map<String, List<?>> comment : comments) {
 
 			ItemCollection itemCol = new ItemCollection(comment);
 			Date date = itemCol.getItemValueDate("datcomment");

@@ -1,6 +1,5 @@
 package org.imixs.application.ui.form;
 
-import java.text.Collator;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
@@ -51,6 +50,7 @@ public class ChronicleEntityComparator implements Comparator<ChronicleEntity> {
 			return 0;
 		}
 
+                @SuppressWarnings("null")
 		int result = dateB.compareTo(dateA);
 		if (!this.ascending) {
 			result = -result;

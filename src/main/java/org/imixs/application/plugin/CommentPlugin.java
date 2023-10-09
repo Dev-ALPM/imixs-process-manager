@@ -88,7 +88,7 @@ public class CommentPlugin extends AbstractPlugin {
 
 		// create new Comment data - important: property names in lower
 		// case
-		List<Map<String, Object>> vCommentList = documentContext.getItemValue("txtCommentLog");
+		List<Map<String, Object>> vCommentList = (List<Map<String, Object>>)documentContext.getItemValue("txtCommentLog");
 		Map<String, Object> log = new HashMap<>();
 		String remoteUser = this.getWorkflowService().getUserName();
 		log.put("datcomment", documentContext.getItemValueDate(WorkflowKernel.LASTEVENTDATE));

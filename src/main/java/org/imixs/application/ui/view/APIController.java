@@ -1,7 +1,6 @@
 package org.imixs.application.ui.view;
 
 import java.io.Serializable;
-import java.util.logging.Logger;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
@@ -31,10 +30,6 @@ public class APIController implements Serializable {
     @ConfigProperty(name = "metrics.endpoint", defaultValue = "http://localhost:9990/metrics")
     String metricsEndpoint;
 
-    @SuppressWarnings("unused")
-    private static Logger logger = Logger.getLogger(APIController.class.getName());
-
-  
     public String getHealthEndpoint() {
         return healthEndpoint;
     }

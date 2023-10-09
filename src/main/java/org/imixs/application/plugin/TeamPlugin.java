@@ -75,7 +75,7 @@ public class TeamPlugin extends AbstractPlugin {
 		ItemCollection team = documentService.load(teamRef);
 		if (team != null) {
 			// copy team members into the item 'namTeam'
-			List<String> teamMembers = team.getItemValue("members");
+			List<String> teamMembers = team.getItemValueList("members", String.class);
 			documentContext.replaceItemValue("teamMembers", teamMembers);
 			// write new team list into the server log....
 			for (String member : teamMembers) {

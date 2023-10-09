@@ -180,7 +180,7 @@ public class CustomFormController implements Serializable {
             return "";
         }
 
-        List<List<String>> dataObjects = task.getItemValue("dataObjects");
+        List<List<String>> dataObjects = (List<List<String>>)task.getItemValue("dataObjects");
         for (List<String> dataObject : dataObjects) {
             // there can be more than one dataOjects be attached.
             // We need the one with the tag <imixs-form>
